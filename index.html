@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1 style="text-align: center; font-size:3.5rem; text-transform:uppercase;">Eventos</h1>
+
+    <nav id="navigation" >
+        <ul class="flex navBar">
+        <li><a href="#eventos">EVENTOS</a></li>
+        <li><a href="#MOUSE">MOUSE</a></li>
+        <li><a href="#">INPUT</a></li>
+        <li><a href="#">SCROLL</a></li>
+        <li><a href="#">EVENT BUBBLING</a></li>
+        <li><a href="#">DELEGATION</a></li>
+        </ul>
+    </nav>
+
+    <section class="container eventos">
+        <h1>EVENTOS</h1>
+
+        <p class="sectionText">Cualquier interaccion que realiza el usuario con la pagina</p>
+        
+        <p class="sectionText">click, scroll, escribir, hover,etc</p>
+    
+        <p class="sectionText">Pero tambien puede ser eventos del navegador, como cuando carga la pagina por primera vez</p>
+
+        <p class="sectionExample">
+            documento.addEventListener('DOMContentLoaded', ()=> {
+                console.log('Me ejecute cuando cargo la pagina');
+            })
+        </p>
+
+    </section>
+
+    <section class="container">
+        <h1>MOUSE</h1>
+
+        <p class="sectionText">Permite agregar una reaccion a cualquier movimiento del mouse realizado por el usuario en relacion a los elementos de la pagina</p>
+
+        <p class="sectionExample">
+            elementNavigation.addEventListener('mouseout', () =>{
+                console.log('Saliste del elemento');
+            })
+        </p>
+
+        <p class="sectionExample">
+            elementButton.addEventListener('click', ()=>{
+                console.log('Hizo click al boton');
+            })
+            
+        </p>
+    </section>
+
+
+    <section class="container">
+        <h1>INPUT</h1>
+
+        <p class="sectionText">Permite agregar una reaccion a cualquier cambio en un input de formulario</p>
+
+        <p class="sectionExample">
+            inputName.addEventListener('blur',(e)=>{
+                console.log(event,e);
+            })
+        </p>
+
+        <p class="sectionExample">
+            inputName.addEventListener('change',(e)=>{
+                console.log(event,e);
+            })
+            
+        </p>
+    </section>
+
+
+    <section class="container">
+        <h1>SCROLL</h1>
+
+        <p class="sectionText">Permite agregar una reaccion a cualquier scrolleo dentro de la pagina</p>
+
+        <p class="sectionExample">
+            window.addEventListener('scroll', (e) =>{
+                    console.log(window.scrollY);})
+
+        </p>
+
+
+    </section>
+
+    <section class="container">
+        <h1>EVENT BUBBLING</h1>
+
+        <p class="sectionText">Evento en el cual se presenta una reaccion desde los elementos hijos a los padres</p>
+
+        <p class="sectionExample">
+            cardElement.addEventListener('click', (e) =>{
+                    e.stopPropagation();
+                    console.log(cardElement);
+                })
+        </p>
+
+
+    </section>
+
+    <section class="container">
+        <h1>DELEGATION</h1>
+
+        <p class="sectionText">En vez de llegar al elemento por la definicion de cada parte, se va desde el padre y este nos jala a los nodos hijos y sus valores</p>
+
+        <p class="sectionExample">
+            const cardElement = document.getElementById('Card');
+            cardElement.addEventListener('click', (e) =>{
+            console.log(e.target);})
+        </p>
+
+
+    </section>
+
+
+
+    <!-- <button id="btnElement">ClickMe</button>
+
+    <button id="btnCreate">Create element</button>
+
+    <div id="container"></div>
+
+    <form action="" id="containerForm">
+        <div>
+            <label for="">Ingrese Nombre</label>
+            <input type="text" required id="inputName">
+        </div>
+        <div>
+            <label for="">Ingrese Apellido</label>
+            <input type="text" required id="inputLastName">
+        </div>
+
+        <div><input type="submit" id="btnSubmit" value="Enviar" />
+        </div>
+    </form>
+
+    <p id="message"></p>
+
+        <article id="Card" class="CardClass">
+            <h1 id="titleCard" class="titleCardClass">Title of Card</h1>
+                <div id="descriptionCard" class="descriptionCardClass"> Description of Card
+                    <p id="infoCard" class="infoCardClass">Info of Card</p>
+                </div>
+        </article> -->
+
+    <script src="./06_Delegation.js"></script>
+</body>
+</html>
